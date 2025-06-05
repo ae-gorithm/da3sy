@@ -3,7 +3,8 @@
 #include<queue>
 using namespace std;
 
-//이분 그래프 이웃한 정점이 서로 다른 색상으로 칠해질 수 있는 그래프
+//이분 그래프 : 이웃한 정점이 서로 다른 색상으로 칠해질 수 있는 그래프
+//dfs, bfs 두 가지로 풀 수 있으나 bfs 다 까먹어서 회상 겸 풂
 
 int main() {
     int k;
@@ -12,7 +13,7 @@ int main() {
         int u,v;
         cin >> u >> v;
         vector<int> vec[u+1];
-        int colors[u+1] = {0,};
+        int colors[u+1] = {0,}; //visited의 역할 0이면 한 번도 안 간 거 1, -1의 색상으로 방문 및 이분 그래프 여부 설정
         bool isB = true;
         
         //그래프 할당
@@ -43,7 +44,8 @@ int main() {
                             break;
                         }
                     }
-                 }
+                }
+                //BFS 끝
             }
         }
         
